@@ -5,7 +5,7 @@ export const createAccountController = async (req, res) => {
     try {
         const user = req.user;
 
-        const account = new accountModel.create({
+        const account = await new accountModel.create({
             user: user._id,
             status: "active",
             currency: "INR",
